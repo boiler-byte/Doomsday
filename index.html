@@ -589,6 +589,8 @@
             text-shadow: 0 0 15px rgba(0, 200, 80, 0.6);
         }
 
+        
+
         .end {
             text-align: center;
             margin-top: 2rem;
@@ -620,6 +622,16 @@
             filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%);
             height: 2.6rem;
             vertical-align: middle;
+        }
+
+        .teaser {
+            text-align: center; 
+            font-size: 0.85rem; 
+            margin: 1rem auto; 
+            color: #8a8a9a;
+        }
+        .teaser em {
+            font-size:1.4rem;
         }
 
         /* Responsive */
@@ -664,7 +676,327 @@
             .icon-green { height: 1.8rem; }
         }
 
-        
+        /* ============================================
+        PRINT STYLESHEET – Avengers: Doomsday
+        ============================================ */
+
+        @media print {
+
+            /* ---------- Grundlayout ---------- */
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            @page {
+                size: A4;
+                margin: 2cm 2.2cm 2.2cm 2.2cm;
+            }
+
+            html,
+            body {
+                background: #ffffff !important;
+                background-image: none !important;
+                color: #111111 !important;
+                font-family: 'Georgia', 'Times New Roman', serif !important;
+                font-size: 11pt !important;
+                line-height: 1.55 !important;
+                min-height: auto !important;
+                padding: 0 !important;
+                display: block !important;
+            }
+
+            /* ---------- Container: Rahmen & Schatten weg ---------- */
+            .container {
+                max-width: 100% !important;
+                width: 100% !important;
+                background: transparent !important;
+                backdrop-filter: none !important;
+                border: none !important;
+                border-radius: 0 !important;
+                box-shadow: none !important;
+                padding: 0 !important;
+                position: static !important;
+                overflow: visible !important;
+            }
+
+            /* Deko-Pseudoelemente ausblenden */
+            .container::before,
+            .container::after {
+                display: none !important;
+                content: none !important;
+            }
+
+            /* ---------- Bilder: nur das Titelbild behalten, Deko weg ---------- */
+            img {
+                filter: none !important;
+                box-shadow: none !important;
+            }
+
+            /* Titelbild (das große runde Bild) begrenzen */
+            .container > img:first-of-type {
+                max-width: 9cm !important;
+                display: block !important;
+                margin: 0 auto 1rem auto !important;
+                padding: 0 !important;
+                border-radius: 0 !important;
+                page-break-inside: avoid;
+            }
+
+
+            /* ---------- Typografie ---------- */
+            h1 {
+                font-family: 'Impact', 'Arial Black', sans-serif !important;
+                font-size: 26pt !important;
+                letter-spacing: 3pt !important;
+                color: #000000 !important;
+                text-shadow: none !important;
+                text-align: center !important;
+                margin: 0 0 0.4rem 0 !important;
+                line-height: 1.15 !important;
+                word-break: normal !important;
+                page-break-after: avoid;
+            }
+
+            .studio {
+                font-family: 'Helvetica Neue', Arial, sans-serif !important;
+                font-size: 8pt !important;
+                letter-spacing: 4pt !important;
+                color: #555555 !important;
+                text-transform: uppercase !important;
+                text-align: center !important;
+                margin-bottom: 0.3rem !important;
+            }
+
+            .subtitle {
+                font-family: 'Georgia', serif !important;
+                font-size: 11pt !important;
+                letter-spacing: 1.5pt !important;
+                color: #333333 !important;
+                text-shadow: none !important;
+                text-align: center !important;
+                border-bottom: 0.5pt solid #999999 !important;
+                padding-bottom: 0.6rem !important;
+                margin-bottom: 1.2rem !important;
+                font-weight: normal !important;
+            }
+
+            .tagline {
+                text-align: center !important;
+                font-style: italic !important;
+                font-size: 10.5pt !important;
+                color: #333333 !important;
+                background: transparent !important;
+                border-left: none !important;
+                border-right: none !important;
+                border-radius: 0 !important;
+                text-shadow: none !important;
+                padding: 0.3rem 0 !important;
+                margin-bottom: 1.2rem !important;
+                page-break-inside: avoid;
+            }
+
+            h2 {
+                font-family: 'Impact', 'Arial Black', sans-serif !important;
+                font-size: 14pt !important;
+                letter-spacing: 1pt !important;
+                color: #000000 !important;
+                text-shadow: none !important;
+                background: transparent !important;
+                border-bottom: 1pt solid #000000 !important;
+                padding-bottom: 0.15rem !important;
+                margin-top: 1.4rem !important;
+                margin-bottom: 0.6rem !important;
+                text-transform: uppercase !important;
+                position: static !important;
+                page-break-after: avoid;
+                page-break-inside: avoid;
+                font-weight: 500;
+            }
+
+            h2:first-of-type {
+                margin-top: 0.6rem !important;
+            }
+
+            p {
+                font-family: 'Georgia', 'Times New Roman', serif !important;
+                font-size: 11pt !important;
+                color: #111111 !important;
+                text-align: justify !important;
+                hyphens: auto !important;
+                margin-bottom: 0.6rem !important;
+                orphans: 3;
+                widows: 3;
+            }
+
+            /* ---------- Dialoge ---------- */
+            .dialog {
+                border-left: 1.5pt solid #666666 !important;
+                padding-left: 0.9rem !important;
+                margin: 0.3rem 0 0.7rem 0 !important;
+                font-style: italic !important;
+                color: #222222 !important;
+                page-break-inside: avoid;
+            }
+
+            .dialog p {
+                font-size: 10.5pt !important;
+                margin-bottom: 0.3rem !important;
+                text-align: left !important;
+            }
+
+            /* ---------- Hervorhebungen: auf Druck lesbar machen ---------- */
+            .njom {
+                color: #000000 !important;
+                text-shadow: none !important;
+                font-weight: bold !important;
+                font-style: normal !important;
+                letter-spacing: 0.5pt !important;
+                /* dezente Unterstreichung, damit die "Njom"-Stellen erkennbar bleiben */
+                text-decoration: underline;
+                text-decoration-thickness: 0.5pt;
+                text-underline-offset: 2pt;
+            }
+
+            .sound {
+                font-style: normal !important;
+                font-weight: bold !important;
+                color: #000000 !important;
+            }
+
+            .highlight {
+                color: #000000 !important;
+                text-shadow: none !important;
+                font-weight: bold !important;
+                font-variant: small-caps;
+                letter-spacing: 0.5pt !important;
+            }
+
+            /* ---------- Credit / Logo / Endzeilen ---------- */
+            .credit {
+                font-family: 'Helvetica Neue', Arial, sans-serif !important;
+                font-size: 8.5pt !important;
+                letter-spacing: 1.5pt !important;
+                color: #444444 !important;
+                text-align: center !important;
+                border-top: 0.5pt solid #999999 !important;
+                padding-top: 0.7rem !important;
+                margin-top: 1.2rem !important;
+                page-break-inside: avoid;
+            }
+
+            .logo-end {
+                font-family: 'Impact', 'Arial Black', sans-serif !important;
+                font-size: 16pt !important;
+                letter-spacing: 4pt !important;
+                color: #000000 !important;
+                text-shadow: none !important;
+                background: transparent !important;
+                text-align: center !important;
+                position: static !important;
+                height: auto !important;
+                margin: 1.2rem 0 0.4rem 0 !important;
+                page-break-inside: avoid;
+                font-weight: 500;
+            }
+
+            .logo-end img {
+                display: none !important;
+            }
+
+            .marvel-logo {
+                font-family: 'Impact', 'Arial Black', sans-serif !important;
+                font-size: 11pt !important;
+                letter-spacing: 3pt !important;
+                color: #000000 !important;
+                text-shadow: none !important;
+                text-align: center !important;
+                margin-top: 0.8rem !important;
+                page-break-inside: avoid;
+            }
+
+            .end {
+                font-style: italic !important;
+                font-size: 9.5pt !important;
+                color: #444444 !important;
+                text-align: center !important;
+                margin-top: 1rem !important;
+            }
+
+            /* ---------- Post-Credit-Szene ---------- */
+            .postcredits {
+                background: transparent !important;
+                border: 0.75pt dashed #666666 !important;
+                border-radius: 0 !important;
+                box-shadow: none !important;
+                padding: 0.9rem 1rem !important;
+                margin-top: 1.4rem !important;
+                color: #111111 !important;
+                page-break-inside: avoid;
+                position: static !important;
+            }
+
+            .postcredits::before {
+                content: "POST-CREDIT-SZENE" !important;
+                position: static !important;
+                display: block !important;
+                background: transparent !important;
+                border: none !important;
+                padding: 0 !important;
+                margin-bottom: 0.4rem !important;
+                font-family: 'Helvetica Neue', Arial, sans-serif !important;
+                font-size: 7.5pt !important;
+                letter-spacing: 2pt !important;
+                color: #000000 !important;
+                font-weight: bold !important;
+                border-radius: 0 !important;
+                text-align: left !important;
+            }
+
+            .postcredits p {
+                font-size: 10pt !important;
+                color: #111111 !important;
+                margin-bottom: 0.4rem !important;
+            }
+
+            .postcredits .dialog {
+                border-left-color: #666666 !important;
+            }
+
+            .postcredits .njom {
+                font-size: 10.5pt !important;
+            }
+
+            /* ---------- Seitenumbrüche ---------- */
+            /* Jeder Akt beginnt auf einer neuen Seite (optional, gern anpassen) */
+            h2 {
+                page-break-before: auto;
+            }
+
+            /* Größere Blöcke nicht auseinanderreißen */
+            .postcredits,
+            .credit,
+            .tagline,
+            .logo-end {
+                page-break-inside: avoid;
+            }
+
+            /* ---------- Links (falls vorhanden) ---------- */
+            a {
+                color: #000000 !important;
+                text-decoration: underline !important;
+            }
+
+            /* ---------- Scrollbar-Definitionen entfernen ---------- */
+            ::-webkit-scrollbar,
+            ::-webkit-scrollbar-track,
+            ::-webkit-scrollbar-thumb {
+                display: none !important;
+                width: 0 !important;
+                background: transparent !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1028,12 +1360,12 @@
                 <p>„PETER.“</p>
             </div>
             <div class="marvel-logo">MARVEL</div>
-            <p style="text-align: center; font-size: 0.85rem; margin-top: 1rem; color: #8a8a9a;">
+            <div class="teaser">
                 Captain Zombie-Rayman <br>
                 will return <br>
                 as Captain Iron-Zombie in <br>
-                <em style="font-size:1.4rem">Loki and the New Avengers <br>defy the Return of <br>the first Iron-Zombie Captain</em>.
-            </p>
+                <em>Loki and the New Avengers <br>defy the Return of <br>the first Iron-Zombie Captain</em>.
+            </div>
         </div>
 
         <div class="end">Ende.</div>
