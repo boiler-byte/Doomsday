@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AVENGERS: DOOMSDAY – Fan Fiction</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #0a0a0f;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(180, 30, 30, 0.08) 0%, transparent 30%),
+                radial-gradient(circle at 90% 80%, rgba(30, 60, 180, 0.08) 0%, transparent 35%),
+                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255, 255, 255, 0.01) 2px, rgba(255, 255, 255, 0.01) 4px);
+            font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            color: #d0d0e0;
+            line-height: 1.7;
+            min-height: 100vh;
+            padding: 2rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background-color: rgba(10, 10, 18, 0.85);
+            backdrop-filter: blur(4px);
+            border: 1px solid #2a2a3a;
+            border-radius: 24px;
+            padding: 2.5rem 2.8rem;
+            box-shadow: 
+                0 0 40px rgba(180, 0, 0, 0.15),
+                0 0 80px rgba(0, 0, 0, 0.8),
+                inset 0 0 30px rgba(0, 0, 0, 0.7);
+            position: relative;
+            /* overflow: hidden; */
+        }
+
+        /* Marvel-rote Akzentlinie oben */
+        .container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #8b0000, #cc0000, #8b0000);
+            box-shadow: 0 0 20px #cc0000;
+        }
+
+        /* Kleine Deko-Ecke unten rechts */
+        .container::after {
+            content: "⚡";
+            position: absolute;
+            bottom: 10px;
+            right: 20px;
+            font-size: 2rem;
+            opacity: 0.1;
+            transform: rotate(15deg);
+            pointer-events: none;
+        }
+
+        h1 {
+            font-size: 3.2rem;
+            font-weight: 900;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            color: #ffffff;
+            text-shadow: 
+                0 0 10px #cc0000,
+                0 0 30px #8b0000,
+                0 4px 8px #000;
+            text-align: center;
+            margin-bottom: 0.3rem;
+            line-height: 1.2;
+            font-family: 'Impact', 'Arial Black', 'Segoe UI Black', sans-serif;
+            word-break: break-word;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-size: 1.3rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #a0a0b8;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid #2a2a3a;
+            padding-bottom: 1.5rem;
+            font-weight: 300;
+            text-shadow: 0 0 10px rgba(200, 0, 0, 0.3);
+        }
+
+        .studio {
+            text-align: center;
+            font-size: 0.9rem;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            color: #6a6a7a;
+            margin-bottom: 0.5rem;
+            font-weight: 400;
+        }
+
+        .tagline {
+            text-align: center;
+            font-style: italic;
+            font-size: 1.1rem;
+            color: #b0b0c8;
+            margin-bottom: 2rem;
+            padding: 0.8rem 1rem;
+            background: rgba(160, 0, 0, 0.1);
+            border-left: 4px solid #cc0000;
+            border-right: 4px solid #cc0000;
+            border-radius: 8px;
+            text-shadow: 0 0 8px rgba(200, 0, 0, 0.4);
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #e0e0f0;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid #cc0000;
+            text-shadow: 0 0 15px rgba(200, 0, 0, 0.5);
+            font-family: 'Impact', 'Arial Black', sans-serif;
+            text-transform: uppercase;
+        }
+
+        h2:first-of-type {
+            margin-top: 0.5rem;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            font-size: 1.05rem;
+            color: #c8c8dc;
+            text-align: justify;
+            hyphens: auto;
+        }
+
+        .dialog {
+            margin: 0.5rem 0 1.2rem 0;
+            padding-left: 1.5rem;
+            border-left: 2px solid #3a3a5a;
+            font-style: italic;
+            color: #b8b8d0;
+        }
+
+        .dialog p {
+            margin-bottom: 0.5rem;
+        }
+
+        .njom {
+            font-weight: 700;
+            color: #ff5555;
+            text-shadow: 0 0 8px rgba(255, 0, 0, 0.7);
+            font-style: normal;
+            letter-spacing: 1px;
+        }
+
+        .sound {
+            font-style: normal;
+            font-weight: 600;
+            color: #e0a0a0;
+            letter-spacing: 0.5px;
+        }
+
+        .highlight {
+            color: #ff8866;
+            font-weight: 600;
+            text-shadow: 0 0 10px rgba(255, 80, 0, 0.3);
+        }
+
+        .credit {
+            text-align: center;
+            margin-top: 3rem;
+            font-size: 0.9rem;
+            color: #6a6a7a;
+            letter-spacing: 2px;
+            border-top: 1px solid #2a2a3a;
+            padding-top: 1.5rem;
+            font-weight: 300;
+        }
+
+        .postcredits {
+            margin-top: 2.5rem;
+            padding: 1.8rem 2rem;
+            background: rgba(15, 15, 25, 0.9);
+            border: 1px dashed #4a4a6a;
+            border-radius: 16px;
+            font-size: 0.95rem;
+            color: #b0b0c8;
+            box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.6);
+            position: relative;
+        }
+
+        .postcredits::before {
+            content: "POST-CREDIT-SZENE";
+            position: absolute;
+            top: -12px;
+            left: 30px;
+            background: #0a0a0f;
+            padding: 0 12px;
+            font-size: 0.75rem;
+            letter-spacing: 4px;
+            color: #cc0000;
+            border: 1px solid #3a0000;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        .postcredits p {
+            font-size: 0.95rem;
+            color: #b0b0c8;
+            margin-bottom: 0.8rem;
+        }
+
+        .postcredits .dialog {
+            border-left-color: #6a2a2a;
+        }
+
+        .postcredits .njom {
+            font-size: 1.1rem;
+        }
+
+        .logo-end {
+            text-align: center;
+            margin-top: 1.5rem;
+            font-size: 1.8rem;
+            font-weight: 900;
+            letter-spacing: 8px;
+            color: #ffffff;
+            text-shadow: 0 0 20px #cc0000, 0 0 40px #8b0000;
+            font-family: 'Impact', 'Arial Black', sans-serif;
+        }
+
+        .marvel-logo {
+            text-align: center;
+            font-size: 1rem;
+            letter-spacing: 6px;
+            color: #cc0000;
+            margin-top: 1.5rem;
+            font-weight: 700;
+            text-shadow: 0 0 15px rgba(200, 0, 0, 0.6);
+        }
+
+        .end {
+            text-align: center;
+            margin-top: 2rem;
+            font-style: italic;
+            color: #7a7a8a;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a0f;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #3a0a0a;
+            border-radius: 10px;
+            border: 2px solid #0a0a0f;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #5a0a0a;
+        }
+
+        /* Responsive */
+        @media (max-width: 700px) {
+            body {
+                padding: 1rem 0.8rem;
+            }
+            .container {
+                padding: 1.8rem 1.2rem;
+                border-radius: 16px;
+            }
+            h1 {
+                font-size: 2rem;
+                letter-spacing: 3px;
+            }
+            h2 {
+                font-size: 1.4rem;
+            }
+            .subtitle {
+                font-size: 1rem;
+                letter-spacing: 2px;
+            }
+            .dialog {
+                padding-left: 1rem;
+            }
+            .postcredits {
+                padding: 1.5rem 1rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            h1 {
+                font-size: 1.6rem;
+                letter-spacing: 2px;
+            }
+            h2 {
+                font-size: 1.2rem;
+            }
+            p {
+                font-size: 0.95rem;
+            }
+        }
+
+                * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #0a0a0f;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(30, 180, 60, 0.08) 0%, transparent 30%),
+                radial-gradient(circle at 90% 80%, rgba(30, 120, 60, 0.08) 0%, transparent 35%),
+                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255, 255, 255, 0.01) 2px, rgba(255, 255, 255, 0.01) 4px);
+            font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            color: #d0d0e0;
+            line-height: 1.7;
+            min-height: 100vh;
+            padding: 2rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background-color: rgba(10, 10, 18, 0.85);
+            backdrop-filter: blur(4px);
+            border: 1px solid #1f3324;
+            border-radius: 24px;
+            padding: 2.5rem 2.8rem;
+            box-shadow: 
+                0 0 40px rgba(0, 180, 60, 0.15),
+                0 0 80px rgba(0, 0, 0, 0.8),
+                inset 0 0 30px rgba(0, 0, 0, 0.7);
+            position: relative;
+            /* overflow: hidden; */
+        }
+
+        /* Grüne Akzentlinie oben */
+        .container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #0b6b2a, #1ecc4c, #0b6b2a);
+            box-shadow: 0 0 20px #1ecc4c;
+        }
+
+        /* Kleine Deko-Ecke unten rechts */
+        .container::after {
+            content: "⚡";
+            position: absolute;
+            bottom: 10px;
+            right: 20px;
+            font-size: 2rem;
+            opacity: 0.1;
+            transform: rotate(15deg);
+            pointer-events: none;
+        }
+
+        h1 {
+            font-size: 3.2rem;
+            font-weight: 900;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            color: #ffffff;
+            text-shadow: 
+                0 0 10px #1ecc4c,
+                0 0 30px #0b6b2a,
+                0 4px 8px #000;
+            text-align: center;
+            margin-bottom: 0.3rem;
+            line-height: 1.2;
+            font-family: 'Impact', 'Arial Black', 'Segoe UI Black', sans-serif;
+            word-break: break-word;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-size: 1.3rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #a0b8a8;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid #1f3324;
+            padding-bottom: 1.5rem;
+            font-weight: 300;
+            text-shadow: 0 0 10px rgba(0, 200, 80, 0.3);
+        }
+
+        .studio {
+            text-align: center;
+            font-size: 0.9rem;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            color: #6a7a6e;
+            margin-bottom: 0.5rem;
+            font-weight: 400;
+        }
+
+        .tagline {
+            text-align: center;
+            font-style: italic;
+            font-size: 1.1rem;
+            color: #b0c8b8;
+            margin-bottom: 2rem;
+            padding: 0.8rem 1rem;
+            background: rgba(0, 160, 60, 0.1);
+            border-left: 4px solid #1ecc4c;
+            border-right: 4px solid #1ecc4c;
+            border-radius: 8px;
+            text-shadow: 0 0 8px rgba(0, 200, 80, 0.4);
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #e0f0e4;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid #1ecc4c;
+            text-shadow: 0 0 15px rgba(0, 200, 80, 0.5);
+            font-family: 'Impact', 'Arial Black', sans-serif;
+            text-transform: uppercase;
+
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            z-index: 1020;
+            display: block;
+            
+            background-color: rgba(10, 10, 18, 1);
+        }
+
+        h2:first-of-type {
+            margin-top: 0.5rem;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            font-size: 1.05rem;
+            color: #c8dcd0;
+            text-align: justify;
+            hyphens: auto;
+        }
+
+        .dialog {
+            margin: 0.5rem 0 1.2rem 0;
+            padding-left: 1.5rem;
+            border-left: 2px solid #2a4a34;
+            font-style: italic;
+            color: #b8d0c0;
+        }
+
+        .dialog p {
+            margin-bottom: 0.5rem;
+        }
+
+        .njom {
+            font-weight: 700;
+            color: #55ff88;
+            text-shadow: 0 0 8px rgba(0, 255, 100, 0.7);
+            font-style: normal;
+            letter-spacing: 1px;
+        }
+
+        .sound {
+            font-style: normal;
+            font-weight: 600;
+            color: #a0e0b0;
+            letter-spacing: 0.5px;
+        }
+
+        .highlight {
+            color: #66ffaa;
+            font-weight: 600;
+            text-shadow: 0 0 10px rgba(0, 255, 100, 0.3);
+        }
+
+        .credit {
+            text-align: center;
+            margin-top: 3rem;
+            font-size: 0.9rem;
+            color: #6a7a6e;
+            letter-spacing: 2px;
+            border-top: 1px solid #1f3324;
+            padding-top: 1.5rem;
+            font-weight: 300;
+        }
+
+        .postcredits {
+            margin-top: 2.5rem;
+            padding: 1.8rem 2rem;
+            background: rgba(10, 20, 14, 0.9);
+            border: 1px dashed #2a4a34;
+            border-radius: 16px;
+            font-size: 0.95rem;
+            color: #b0c8b8;
+            box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.6);
+            position: relative;
+        }
+
+        .postcredits::before {
+            content: "POST-CREDIT-SZENE";
+            position: absolute;
+            top: -12px;
+            left: 30px;
+            background: #0a0a0f;
+            padding: 0 12px;
+            font-size: 0.75rem;
+            letter-spacing: 4px;
+            color: #1ecc4c;
+            border: 1px solid #0b3a1a;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        .postcredits p {
+            font-size: 0.95rem;
+            color: #b0c8b8;
+            margin-bottom: 0.8rem;
+        }
+
+        .postcredits .dialog {
+            border-left-color: #2a5a3a;
+        }
+
+        .postcredits .njom {
+            font-size: 1.1rem;
+        }
+
+        .logo-end {
+            text-align: center;
+            margin-top: 1.5rem;
+            font-size: 1.8rem;
+            font-weight: 900;
+            letter-spacing: 8px;
+            color: #ffffff;
+            text-shadow: 0 0 20px #1ecc4c, 0 0 40px #0b6b2a;
+            font-family: 'Impact', 'Arial Black', sans-serif;
+        }
+
+        .marvel-logo {
+            text-align: center;
+            font-size: 1rem;
+            letter-spacing: 6px;
+            color: #1ecc4c;
+            margin-top: 1.5rem;
+            font-weight: 700;
+            text-shadow: 0 0 15px rgba(0, 200, 80, 0.6);
+        }
+
+        .end {
+            text-align: center;
+            margin-top: 2rem;
+            font-style: italic;
+            color: #7a8a7e;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a0f;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #0a3a1a;
+            border-radius: 10px;
+            border: 2px solid #0a0a0f;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0a5a2a;
+        }
+
+
+
+        .icon-green {
+            filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%);
+            height: 2.6rem;
+            vertical-align: middle;
+        }
+
+        /* Responsive */
+        @media (max-width: 700px) {
+            body {
+                padding: 1rem 0.8rem;
+            }
+            .container {
+                padding: 1.8rem 1.2rem;
+                border-radius: 16px;
+            }
+            h1 {
+                font-size: 2rem;
+                letter-spacing: 3px;
+            }
+            h2 {
+                font-size: 1.4rem;
+            }
+            .subtitle {
+                font-size: 1rem;
+                letter-spacing: 2px;
+            }
+            .dialog {
+                padding-left: 1rem;
+            }
+            .postcredits {
+                padding: 1.5rem 1rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            h1 {
+                font-size: 1.6rem;
+                letter-spacing: 2px;
+            }
+            h2 {
+                font-size: 1.2rem;
+            }
+            p {
+                font-size: 0.95rem;
+            }
+            .icon-green { height: 1.8rem; }
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="doomsday.webp" style="max-width:100%;display:block;margin:auto">
+        <div class="studio">Marvel Studios Presents</div>
+        <h1>Avengers: Doomsday</h1>
+        <div class="subtitle">Manche wollen die Welt retten. Andere wollen sie beherrschen.</div>
+
+        <!-- Prolog -->
+        <h2><img class="icon-green" src="shield.webp"> Prolog: Der Nachbar</h2>
+        <p>Viele Jahre lang lebte Steve Rogers mit Peggy Carter in einer ruhigen amerikanischen Vorstadt. Er hatte seine Abenteuer hinter sich gelassen. Keine Nazis, keine Aliens, keine Weltenuntergänge. Nur ein kleines Haus, einen Garten und eine Veranda.</p>
+        <p>Und einen Nachbarn.</p>
+        <p><span class="highlight">Victor.</span></p>
+        <p>Victor war ein etwas sonderbarer Mann. Er trug selbst bei dreißig Grad einen hochgeschlossenen Mantel und eine Metallmaske, besaß einen ungewöhnlich großen Weinkeller und sprach beim Grillen gern über die Schwächen der Weltordnung.</p>
+        <div class="dialog">
+            <p>„Die Menschheit braucht Führung“, pflegte Victor zu sagen.</p>
+            <p>„Na ja“, antwortete Steve, während er seine Würstchen wendete. „Vielleicht sollten wir erst mal miteinander reden.“</p>
+            <p>Victor lächelte.</p>
+            <p>„Genau das schätze ich an dir, Steve.“</p>
+        </div>
+        <p>Die beiden wurden unzertrennlich. Sie spielten Schach, tranken Kaffee und sahen sich gemeinsam die Nachrichten an und waren die größten auf dem Kinderspielplatz. Manchmal saßen sie bis tief in die Nacht auf der Veranda und diskutierten darüber, wie man die Welt ändern könnte.</p>
+        <p>Steve ahnte nicht, dass sein bester Freund eines Tages eine Rüstung bauen würde, die aussah wie ein besonders aggressives Feuerwehrauto.</p>
+        <p>Und Victor ahnte nicht, dass Steve eines Tages über <span class="njom">„njom njom“</span> sprechen würde.</p>
+        <p>Zumindest hoffte er es nicht.</p>
+
+        <!-- Akt I -->
+        <h2><img class="icon-green" src="cap.webp"> Akt I: Gemeinsam</h2>
+        <p><em>Jahrzehnte später.</em></p>
+        <p>Victor von Doom stand in einer gewaltigen Halle. Seine Rüstung war einschüchternd, seine Augen glühten hinter einer metallischen Maske. Ein Heer aus Robotern kniete vor ihm.</p>
+        <p>Vor ihm stand Steve Rogers.</p>
+        <p>Captain America trug seine Rüstung. In seiner Hand lag Mjölnir.</p>
+        <p>Doom breitete die Arme aus.</p>
+        <div class="dialog">
+            <p>„Steve. Mein Freund. Wir haben lange genug zugesehen, wie die Schwachen die Starken zurückhalten. Die Galaxie braucht Ordnung.“</p>
+        </div>
+        <p>Steve betrachtete ihn nachdenklich.</p>
+        <div class="dialog">
+            <p>„Und wie wollen wir das anstellen?“</p>
+            <p>Doom lächelte.</p>
+            <p>„Wir unterwerfen sie.“</p>
+        </div>
+        <p>Steve nickte.</p>
+        <div class="dialog">
+            <p>„Gemeinsam.“</p>
+        </div>
+        <p>Die beiden blickten auf eine holografische Karte der Galaxie. Millionen von Sternen leuchteten darauf.</p>
+        <p>Es war der Beginn einer wunderbaren Allmachtsfantasie.</p>
+        <p>Und einer ausgesprochen schlechten Idee.</p>
+        <p>Denn irgendwo in einem verlassenen Labor war ein Virus ausgebrochen.</p>
+
+        <!-- Akt II -->
+        <h2><img class="icon-green" src="hammer.webp"> Akt II: Der letzte Hammer</h2>
+        <p>Die ersten Planeten fielen innerhalb weniger Stunden.</p>
+        <p>Nicht an Dooms Armeen.</p>
+        <p>An Zombies.</p>
+        <p>Eine unbekannte Seuche hatte sich durch mehrere Welten gefressen. Ganze Städte waren verstummt. Die Überlebenden flohen, während die Toten weitergingen.</p>
+        <p>Doom und Steve kämpften Seite an Seite. Ihre Allianz schien unbesiegbar.</p>
+        <p>Bis Steve gebissen wurde.</p>
+        <p>Doom versuchte alles. Er aktivierte Heilstrahlen, Nanoroboter und ein experimentelles Gerät, das angeblich sogar den Tod rückgängig machen konnte.</p>
+        <p>Nichts funktionierte.</p>
+        <p>Steve sah seinen Freund ein letztes Mal an.</p>
+        <div class="dialog">
+            <p>„Victor … ich glaube, ich brauche eine Pause.“</p>
+            <p>Doom ergriff seine Hand.</p>
+            <p>„Du wirst wieder gesund.“</p>
+            <p>Steve lächelte schwach.</p>
+            <p>„Du solltest deine Rüstung vielleicht noch ein bisschen mehr rot färben.“</p>
+        </div>
+        <p>Dann verlor er das Bewusstsein.</p>
+        <p>Als er wieder erwachte, war er kein Captain America mehr.</p>
+        <p>Er war ein Zombie.</p>
+        <p>Doom wich zurück.</p>
+        <div class="dialog">
+            <p>„Steve?“</p>
+        </div>
+        <p>Der Untote hob langsam den Kopf.</p>
+        <div class="dialog">
+            <p><span class="njom">„Njom njom.“</span></p>
+        </div>
+        <p>Doom flüsterte:</p>
+        <div class="dialog">
+            <p>„Nein.“</p>
+        </div>
+        <p>Steve stürzte sich auf ihn.</p>
+        <p>Doom entkam nur knapp. Er schloss die Panzertüren seines Raumschiffs und startete die Flucht.</p>
+        <p>Hinter ihm schlug Zombie-Steve gegen die Schleuse.</p>
+        <div class="dialog">
+            <p><span class="njom">„NJOM! NJOM! NJOM!“</span></p>
+        </div>
+        <p>Doom presste die Stirn gegen die Scheibe.</p>
+        <div class="dialog">
+            <p>„Ich werde dich retten, Steve.“</p>
+        </div>
+        <p>Dann blickte er auf seine Rüstung.</p>
+        <div class="dialog">
+            <p>„Jarvis. Wir brauchen mehr Rot.“</p>
+            <p>„Sir, die Rüstung ist bereits zu 91 Prozent rot.“</p>
+            <p>„Dann machen wir 100 Prozent daraus.“</p>
+        </div>
+
+        <!-- Akt III -->
+        <h2><img class="icon-green" src="loki.webp"> Akt III: Loki übernimmt</h2>
+        <p>Während Doom sich in seinem Raumschiff seiner Trauer hingab, hatte Loki längst eigene Pläne entwickelt und stahl Mjölnir aus der Halle von Doom.</p>
+        <p>Er hatte den Zeitstrahl kontrolliert. Er hatte Varianten beobachtet, Katastrophen vorhergesehen und gelernt, dass jede Zukunft irgendwann jemandem gehörte, der entschlossen genug war, sie an sich zu reißen.</p>
+        <p>Nun brauchte er nur noch eine Armee.</p>
+        <p>Die New Avengers waren dafür perfekt.</p>
+        <p>Loki erschien vor ihnen, Mjölnir in der Hand.</p>
+        <div class="dialog">
+            <p>„Ich habe den Zeitstrahl kontrolliert. Ihr werdet mir folgen, damit ich Dooms Imperiumsplan zu meinem machen kann.“</p>
+        </div>
+        <p>Yelena verschränkte die Arme.</p>
+        <div class="dialog">
+            <p>„Du willst also die Galaxie erobern?“</p>
+            <p>„Ich bevorzuge den Begriff stabilisieren.“</p>
+            <p>„Und wenn wir Nein sagen?“</p>
+            <p>Loki lächelte.</p>
+            <p>„Dann werde ich euch überzeugen.“</p>
+            <p>„Versuch es.“</p>
+            <p>Loki seufzte.</p>
+            <p>„Immer diese Widerspenstigkeit.“</p>
+        </div>
+        <p>Er hob Mjölnir. Ein Blitz erhellte den Raum.</p>
+        <p>Wenig später lag Black Widow tot in ihrer Badewanne.</p>
+        <p>Loki wandte sich an die übrigen Avengers.</p>
+        <div class="dialog">
+            <p>„Metallarm-Mann. Du übernimmst die Führung.“</p>
+        </div>
+        <p>Winter Soldier sah ihn fassungslos an.</p>
+        <div class="dialog">
+            <p>„Warum ich?“</p>
+            <p>„Weil du noch nicht versucht hast, mich umzubringen.“</p>
+            <p>„Ich habe dich vor fünf Minuten kennengelernt!“</p>
+            <p>„Und genau diese Loyalität schätze ich.“</p>
+        </div>
+        <p>Loki wandte sich ab.</p>
+        <p>Er war zufrieden.</p>
+        <p>Bis er ein Geräusch hörte.</p>
+        <p>Ein langsames Schlurfen.</p>
+        <p>Dann ein Knurren.</p>
+        <p>Und schließlich ein Geräusch aus dem Dunkeln:</p>
+        <div class="dialog">
+            <p><span class="njom">„Njom, Njom, Njom.“</span></p>
+        </div>
+
+        <!-- Akt IV -->
+        <h2><img class="icon-green" src="claws.webp"> Akt IV: Captain Rayman</h2>
+        <p>Die Schlacht begann auf einem zerstörten Schlachtfeld zwischen den Ruinen einer Stadt.</p>
+        <p>Wolverine stand Loki gegenüber. Seine Krallen glänzten im Mondlicht.</p>
+        <div class="dialog">
+            <p>„Du hast also den Zeitstrahl kontrolliert, ja?“</p>
+        </div>
+        <p>Loki hob Mjölnir.</p>
+        <div class="dialog">
+            <p>„Ich habe mehr gesehen, als du dir vorstellen kannst.“</p>
+        </div>
+        <p>Wolverine grinste.</p>
+        <div class="dialog">
+            <p>„Ich hab schon Typen wie dich gesehen.“</p>
+        </div>
+        <p>Dann bebte der Boden.</p>
+        <p>Zombie-Steve stürmte aus dem Nebel.</p>
+        <p>Loki erstarrte.</p>
+        <div class="dialog">
+            <p>„Steve?“</p>
+        </div>
+        <p>Der Untote streckte seine Hand aus – und Loki flog mit dem Hammer durch die Luft direkt in Zombie-Steves Arme.</p>
+        <div class="dialog">
+            <p>„WIE KANNST DU WÜRDIG SEIN?!“, schrie Loki.</p>
+            <p><span class="njom">„NJOM NJOM NJOM!“</span></p>
+        </div>
+        <p>Loki und Mjölnir verschwanden im Leib des Zombies unter einem Berg aus untoten Körperteilen und magischen Blitzen.</p>
+        <p>Wolverine seufzte.</p>
+        <div class="dialog">
+            <p>„Ich hasse dieses verdammte Franchise.“</p>
+        </div>
+        <p>Gambit und Blade kamen hinzu.</p>
+        <p>Gambit betrachtete Zombie-Steve.</p>
+        <div class="dialog">
+            <p>„Mon ami, der Captain sieht nicht mehr besonders gesund aus.“</p>
+        </div>
+        <p>Blade zog sein Schwert.</p>
+        <div class="dialog">
+            <p>„Dann machen wir ihn eben handlich.“</p>
+        </div>
+        <p>Gemeinsam trennten sie Zombie-Steve sämtliche Gliedmaßen ab.</p>
+        <p>Für einen Moment herrschte Stille.</p>
+        <p>Dann erhob sich Zombie-Steves Torso mit Mjölnir darin. Blitze schossen durch die Luft und verbanden Steves Arme und Beine wieder mit seinem Torso. Seine Gliedmaßen schwebten nun frei an ihren Positionen, ohne erkennbare Gelenke.</p>
+        <p>Er sah aus wie ein Zombie-Rayman.</p>
+        <p>Gambit starrte ihn an.</p>
+        <div class="dialog">
+            <p>„Der Captain hat seine Körperteile verloren.“</p>
+        </div>
+        <p>Blade hob eine Augenbraue.</p>
+        <div class="dialog">
+            <p>„Warum fliegt der noch?“</p>
+        </div>
+        <p>Wolverine schüttelte den Kopf.</p>
+        <div class="dialog">
+            <p>„Weil natürlich der verdammte Hammer seine Gliedmaßen zusammenhält.“</p>
+        </div>
+        <p>Zombie-Steve bäumte sich auf.</p>
+        <p>Da sein Arm nicht mehr richtig mit seiner Schulter verbunden war, drehte er sich wie ein außer Kontrolle geratener Rasensprenger durch die Luft.</p>
+        <p>Wolverine wurde gegen eine Wand geschleudert.</p>
+        <p>Gambit sprang zur Seite.</p>
+        <p>Blade duckte sich.</p>
+        <p>Steve flog in einen Wolkenkratzer.</p>
+        <p>Dann schwebte er wieder heraus.</p>
+        <div class="dialog">
+            <p><span class="njom">„NJOM.“</span></p>
+        </div>
+        <p>Gambit betrachtete das Chaos.</p>
+        <div class="dialog">
+            <p>„Ich würde kündigen, wenn mein Knebelvertrag das erlauben würde.“</p>
+        </div>
+
+        <!-- Akt V -->
+        <h2><img class="icon-green" src="mask.webp"> Akt V: Der eiserne Freund</h2>
+        <p>Ein ohrenbetäubendes Dröhnen erfüllte den Himmel.</p>
+        <p>Rote und goldene Lichter durchbrachen die Wolken. Repulsordüsen zündeten. Eine Gestalt landete mitten auf dem Schlachtfeld.</p>
+        <p>Doom.</p>
+        <p>Seine Rüstung war inzwischen so stark umgebaut worden, dass sie kaum noch von Iron Mans Anzug zu unterscheiden war. Nur der grüne Umhang erinnerte mit seiner seltsamen Farbkombination daran, dass hier kein gewöhnlicher Superheld stand.</p>
+        <p>Doom blickte auf Zombie-Steve.</p>
+        <p>Seine Stimme brach.</p>
+        <div class="dialog">
+            <p>„Steve! Steve! Was haben sie dir nur angetan?“</p>
+        </div>
+        <p>Er ging langsam auf seinen alten Freund zu.</p>
+        <div class="dialog">
+            <p>„Wir wollten doch gemeinsam die Galaxie unterwerfen. Du und ich. Die Veranda. Die Grillabende. Unsere Gespräche über die Schwächen der Demokratie.“</p>
+        </div>
+        <p>Zombie-Steve drehte den Kopf.</p>
+        <div class="dialog">
+            <p><span class="njom">„Njom.“</span></p>
+        </div>
+        <p>Doom sank auf die Knie.</p>
+        <div class="dialog">
+            <p>„Ich hätte dich retten müssen.“</p>
+            <p><span class="njom">„NJOM klonk, NJOM klonk, NJOM klonk.“</span></p>
+        </div>
+        <p>Steves Zähne kamen nicht ansatzweise durch Dooms Rüstung.</p>
+        <p>Wolverine flüsterte zu Blade:</p>
+        <div class="dialog">
+            <p>„Ist das sein Ex?“</p>
+        </div>
+        <p>Blade fragte trocken:</p>
+        <div class="dialog">
+            <p>„Ist das Mr. Iron Jamaika?“</p>
+        </div>
+        <p>Doom stand auf. Seine Augen glühten.</p>
+        <div class="dialog">
+            <p>„Wenn ich dich nicht zurückhaben kann, Steve, werde ich wenigstens das Universum zerstören, das dich mir genommen hat.“</p>
+        </div>
+        <p>Gambit trat einen Schritt zurück.</p>
+        <div class="dialog">
+            <p>„Mon ami, das Universum hat ihm sein Leben genommen. Wir haben ihm die Beine und Arme genommen. Aber das war nichts persönliches.“</p>
+        </div>
+        <p>Doom ignorierte ihn.</p>
+        <p>Er hob die Hände. Seine Repulsoren luden sich auf. Mjölnir reagierte, und gewaltige Blitze verbanden sich mit Dooms Rüstung.</p>
+        <p>Doom hatte seine endgültige Form erreicht.</p>
+        <p><span class="highlight">IRON DOOM.</span></p>
+        <p>Er blickte auf Zombie-Steve.</p>
+        <div class="dialog">
+            <p>„Ich werde dich heilen.“</p>
+        </div>
+        <p>Steve schwebte näher.</p>
+        <div class="dialog">
+            <p>„Loki lecker.“</p>
+        </div>
+        <p>Doom hielt inne.</p>
+        <div class="dialog">
+            <p>„Was?“</p>
+        </div>
+        <p>Steve biss ihm den Helm vom Kopf.</p>
+        <p>Stille.</p>
+        <p>Der mächtigste Mann des Universums stand plötzlich ohne Helm vor seinem besten Freund, der inzwischen hauptsächlich aus elektrisch zusammengehaltenen Körperteilen bestand.</p>
+        <p>Doom blickte in die Augen des Zombies.</p>
+        <p>Dann lächelte er traurig.</p>
+        <div class="dialog">
+            <p>„Du warst immer der Stärkere von uns beiden.“</p>
+        </div>
+        <p>Steve knurrte.</p>
+        <div class="dialog">
+            <p><span class="njom">„Njom.“</span></p>
+        </div>
+        <p>Doom schloss die Augen.</p>
+        <div class="dialog">
+            <p>„Dann lass uns gemeinsam gehen.“</p>
+        </div>
+        <p>Wolverine riss die Augen auf.</p>
+        <div class="dialog">
+            <p>„Oh, komm schon!“</p>
+        </div>
+        <p>Gambit hob die Hände.</p>
+        <div class="dialog">
+            <p>„Das ist mir jetzt zu emotional.“</p>
+        </div>
+        <p>Blade steckte sein Schwert weg.</p>
+        <div class="dialog">
+            <p>„Ich gehe.“</p>
+        </div>
+
+        <!-- Epilog -->
+        <h2><img class="icon-green" src="x.webp"> Epilog: Der neue Anführer</h2>
+        <p><em>Wochen später.</em></p>
+        <p>Die New Avengers standen auf einem Hügel über den Ruinen der Stadt. Die Welt war verwüstet. Die Galaxie stand vor dem Abgrund.</p>
+        <p>Dann trat eine Gestalt aus dem Nebel.</p>
+        <p>Loki.</p>
+        <p>In seiner Hand lag Mjölnir. Er sah aus, wie gekaut und ausgespuckt.</p>
+        <p>Er blickte auf die verbliebenen Helden.</p>
+        <div class="dialog">
+            <p>„Ihr seht aus, als bräuchtet ihr einen Anführer.“</p>
+        </div>
+        <p>Yelena, die den tödlichen Angriff von Loki scheinbar doch überlebt hatte und noch immer leicht versengt war, sah ihn an.</p>
+        <div class="dialog">
+            <p>„Du bist doch der Typ, der mich in der Badewanne gegrillt hat.“</p>
+            <p>Loki lächelte.</p>
+            <p>„Ein Missverständnis.“</p>
+            <p>„Du hast uns getäuscht und verraten.“</p>
+            <p>„Strategische Neuausrichtung.“</p>
+            <p>„Du wurdest von Steve gefressen.“</p>
+        </div>
+        <p>Loki schwieg.</p>
+        <p>Dann blickte er zum Himmel.</p>
+        <p>Ein letzter Blitz zuckte über die Wolken.</p>
+        <p>Irgendwo in der Ferne hörte man ein leises:</p>
+        <div class="dialog">
+            <p><span class="njom">„Njom Njom.“</span></p>
+        </div>
+        <p>Loki schluckte.</p>
+        <div class="dialog">
+            <p>„Also gut. Wir brauchen einen neuen Plan.“</p>
+        </div>
+        <p>Aus dem Schatten trat Wolverine.</p>
+        <p>Hinter ihm Gambit und Blade.</p>
+        <p>Und über ihnen öffnete sich ein Portal.</p>
+        <p>Professor X erschien darin.</p>
+        <div class="dialog">
+            <p>„Meine Freunde. Ich fürchte, die X-Men müssen den Tag retten.“</p>
+        </div>
+        <p>Wolverine starrte in die Kamera.</p>
+        <div class="dialog">
+            <p>„Ich hasse dieses verdammte Franchise.“</p>
+        </div>
+
+        <div class="logo-end"><img src="doomsday.webp" style="width:3rem;vertical-align: middle;"> DOOMSDAY</div>
+        <div class="credit">FREUNDSCHAFT IST VERGÄNGLICH.<br>MJÖLNIR NICHT.</div>
+
+        <!-- Post-Credit-Szene -->
+        <div class="postcredits">
+            <img class="icon-green" src="peter.webp" style="float:left;padding-right:1rem"> 
+            <p>Peter Parker sitzt vor dem Fernseher.</p>
+            <div class="dialog">
+                <p>„Moment. Wenn Steve ein Zombie ist und er immer noch Mjölnir würdig ist …“</p>
+                <p>Aus dem Off: „Peter, hör auf, darüber nachzudenken.“</p>
+                <p>Peter: „Aber—“</p>
+                <p>„PETER.“</p>
+            </div>
+            <div class="marvel-logo">MARVEL</div>
+            <p style="text-align: center; font-size: 0.85rem; margin-top: 1rem; color: #8a8a9a;">
+                Captain Zombie-Rayman <br>
+                will return <br>
+                as Captain Iron-Zombie in <br>
+                <em style="font-size:1.4rem">Loki and the New Avengers <br>defy the Return of <br>the first Iron-Zombie Captain</em>.
+            </p>
+        </div>
+
+        <div class="end">Ende.</div>
+    </div>
+</body>
+</html>
