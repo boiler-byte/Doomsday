@@ -364,8 +364,8 @@
             content: "";
             position: absolute;
             top: 0;
-            left: 0;
-            width: 100%;
+            left: 0.8rem;
+            width: calc(100% - 1.6rem);
             height: 4px;
             background: linear-gradient(90deg, #0b6b2a, #1ecc4c, #0b6b2a);
             box-shadow: 0 0 20px #1ecc4c;
@@ -669,7 +669,11 @@
 </head>
 <body>
     <div class="container">
-        <img src="doomsday.webp" style="max-width:100%;display:block;margin:auto">
+        <img src="doomsday.webp" style="max-width:100%;display:block;margin:auto;
+            border-radius:999px;
+            filter: drop-shadow(0 0 90px #0b6b2a);
+            padding: 2rem;
+            ">
         <div class="studio">Marvel Studios Presents</div>
         <h1>Avengers: Doomsday</h1>
         <div class="subtitle">Manche wollen die Welt retten. Andere wollen sie beherrschen.</div>
